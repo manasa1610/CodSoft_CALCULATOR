@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color:gray;
+}
+
+.calculator {
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15), 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    margin: 2em auto;
+    max-width: 24rem; /* Increased size */
+    background-color: white;
+    display: grid;
+    grid-template-rows: auto repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+}
+
+.calculator__output {
+    background: hsl(202, 11%, 29%);
+    color: hsl(255, 100%, 100%);
+    font-size: 2.5rem; /* Increased font size */
+    padding: 1rem; /* Increased padding */
+    text-align: end;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    box-sizing: border-box;
+}
+
+.calculator__keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1px;
+    background: hsl(207, 19%, 61%);
+    grid-column: 1 / 5;
+    grid-row: 2 / 6; /* Adjust to span enough rows */
+}
+
+.calculator__key {
+    background: hsl(210, 25%, 95%);
+    border: none;
+    padding: 1rem; /* Adjusted padding */
+    font-size: 1.5rem; /* Adjusted font size */
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3) inset;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator__key:active,
+.calculator__key:focus {
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3) inset;
+    outline: none;
+}
+
+.calculator__key--operator {
+    background: hsl(208, 25%, 86%);
+}
+
+.calculator__key--operator:active {
+    background: hsl(208, 24%, 80%);
+}
+
+.calculator__key--enter {
+    background: hsl(357, 100%, 72%);
+    grid-column: 1 / 5; /* Make the = button span all columns */
+    grid-row: 5 / 6; /* Position the = button in the last row */
+}
